@@ -3,6 +3,7 @@ import DefaultLayout from '../layouts';
 import _ from 'lodash';
 import { GetWeatherQuery } from '../graphql/__generated__';
 import fetch from 'isomorphic-unfetch';
+import { LineChart, Line, XAxis, YAxis } from 'recharts';
 
 type IndexProps = {
 
@@ -22,12 +23,21 @@ const Index: React.SFC<IndexProps> = (props) => {
         }
 
         getWeather();
-    }, [])
+    }, []);
 
     return (
         <>
             <DefaultLayout>
-                <pre>{JSON.stringify(weather, null, 2)}</pre>
+                {!!weather && (
+                    <>
+                        {/* <pre>{JSON.stringify(weather, null, 2)}</pre> */}
+                        <LineChart width={400} height={400} data={weather.me?.home?.weather?.entries?.map(e => e!)}>
+                            <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
+                            <XAxis dataKey="time" />
+                            <YAxis />
+                        </LineChart>
+                    </>
+                )}
             </DefaultLayout>
         </>
     );
