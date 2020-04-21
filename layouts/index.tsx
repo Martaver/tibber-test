@@ -5,27 +5,24 @@ import { Normalize } from 'styled-normalize';
 import { GlobalStyle } from '../components/GlobalStyle';
 import styled from 'styled-components';
 import { mq } from '../styles/media';
+import { blue } from '../styles/palette';
+import chroma from 'chroma-js';
 
 const MainGrid = styled.main`
-  
-  display: grid;
 
-  grid-template-areas:
-    "H"
-    "B"
-    "F"
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  grid-template-columns: 1fr;  
-  grid-template-rows: 60px 1fr 120px;
-  
   ${mq.lt.md`
     
   `}
 
-  max-width: 960px;
-  min-height: 100%;
-  margin: 0px auto;
-  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+
+  background: ${blue};
+  background: linear-gradient(180deg, ${chroma(blue).darken(2).hex()} 0%, ${chroma(blue).desaturate(0.5).hex()} 100%);
 `;
 
 /**
