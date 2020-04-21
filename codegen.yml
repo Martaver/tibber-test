@@ -1,0 +1,13 @@
+overwrite: true
+schema: "./graphql/schema.json"
+documents: "{pages,graphql}/**/*.{gql,graphql}"
+generates:
+  graphql/__generated__/index.tsx:        
+    config:
+      nonOptionalTypename: true
+      declarationKind: "interface"
+    plugins:
+      - "typescript"        
+      - "typescript-operations"      
+      - "typescript-react-apollo"
+      
