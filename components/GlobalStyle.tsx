@@ -10,8 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     background: white;
-    min-height: 100%;
-    z-index: 1;
+    min-height: 100%;    
   }
   * {
     box-sizing: border-box;
