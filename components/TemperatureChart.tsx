@@ -11,6 +11,10 @@ type TemperatureChartProps = {
     weather: GetWeatherQuery;
 };
 
+/**
+ * A LineChart component that plots temperature data from a GetWeatherQuery response.
+ * It fades in on component mount.
+ */
 export const TemperatureChart: React.FC<TemperatureChartProps> = ({ width, height, weather }) => {
 
     const formatTimeOfDay: TickFormatterFunction = (dateValue: string) => {

@@ -1,11 +1,14 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-// Import styled components ServerStyleSheet
 import { ServerStyleSheet } from 'styled-components';
 
 type StyledDocumentProps = {
     styleTags: Array<React.ReactElement<{}>>;
 }
 
+/**
+ * This is a pretty textbook Document hook for nextjs, enabling styled-components to render correctly
+ * during SSR.
+ */
 export default class StyledDocument extends Document<StyledDocumentProps> {
 
     render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultLayout from '../layouts';
+import { DefaultLayout } from '../layouts/DefaultLayout';
 import { GetWeatherQuery } from '../graphql/__generated__';
 import fetch from 'isomorphic-unfetch';
 import ReactResizeDetector from 'react-resize-detector';
@@ -8,21 +8,16 @@ import { Loading } from '../components/Loading';
 import { TemperatureChart } from '../components/TemperatureChart';
 import { vars } from '../styles/vars';
 
-type Dimensions = {
-    width: number;
-    height: number;
-}
+const Index: React.FC = () => {
 
-type IndexProps = {
-
-}
-
-const Index: React.SFC<IndexProps> = (props) => {
-    const { } = props;
     const { chart: { scale } } = vars;
 
     const [weather, setWeather] = React.useState<GetWeatherQuery | undefined>(undefined);
 
+    /**
+     * Load the most recent weather data from our API and store it in
+     * the component's state. This will run whenever the component mounts.
+     */
     React.useEffect(() => {
 
         const getWeather = async () => {
@@ -35,30 +30,31 @@ const Index: React.SFC<IndexProps> = (props) => {
     }, []);
 
     return (
-        <>
-            <DefaultLayout>
-                <Title>TODAY'S TEMPERATURE</Title>
-                {!!weather && (
-                    /**
-                     * Wrap the line chart in a resize detector so we can 
-                     * respond to changes in frame dimensions.
-                     */
-                    <ReactResizeDetector handleHeight handleWidth>
-                        {(dimensions: Dimensions) => {
+        <DefaultLayout>
+            <Title>TODAY'S TEMPERATURE</Title>
 
-                            /**
-                             * Calculate the width and height from the scaling factors provided.
-                             */
-                            const width = dimensions.width * scale.width;
-                            const height = dimensions.height * scale.height;
+            {!!weather && (
+                /**
+                 * Wrap the line chart in a resize detector so we can 
+                 * respond to changes in frame dimensions.
+                 */
+                <ReactResizeDetector handleHeight handleWidth>
+                    {(dimensions: { width: number, height: number }) => {
 
-                            return <TemperatureChart {...{ width, height, weather }} />
-                        }}
-                    </ReactResizeDetector>
-                )}
-                <Loading isLoading={!weather} />
-            </DefaultLayout>
-        </>
+                        /**
+                         * Calculate the width and height from the scaling factors provided.
+                         */
+                        const width = dimensions.width * scale.width;
+                        const height = dimensions.height * scale.height;
+
+                        return <TemperatureChart {...{ width, height, weather }} />
+                    }}
+                </ReactResizeDetector>
+            )}
+
+            {/* When weather data is not available, display animated loader. */}
+            <Loading isLoading={!weather} />
+        </DefaultLayout>
     );
 }
 

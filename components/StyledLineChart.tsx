@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { LineChart } from "recharts";
 import { tick } from "../styles/palette";
 
+/**
+ * A LineChart component that implements Tibber-esque styling.
+ */
 export const StyledLineChart = styled(LineChart)`
 
     margin-top: 3em;

@@ -1,3 +1,6 @@
+/**
+ * Application-wide constants.
+ */
 export const vars = {
     chart: {
         /**

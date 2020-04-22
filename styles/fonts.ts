@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
-
 /**
+ * Nothing special here.
  * Obtained from Google Fonts.
  * See: https://fonts.google.com/?query=lato
  */

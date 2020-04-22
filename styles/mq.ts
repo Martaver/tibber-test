@@ -1,5 +1,8 @@
 import { css } from "styled-components";
 
+/**
+ * The breakpoint limits used across the site.
+ */
 const bp = {
     xs: 0,
     sm: 576,
@@ -59,6 +62,14 @@ const build = (queries: { [key: string]: string }) => Object.keys(queries).reduc
 
 type MediaQueries = IsQueries & { gt: GtQueries, lt: LtQueries }
 
+/**
+ * Builds an API based on our break-points that can be used in-line in styled-components or emotion.
+ * 
+ * This is mainly copy-pasta code that I use from one project to the next, to make life easy. I should probably
+ * stick it in a package.
+ * 
+ * For an example of how I use it check out ./typography.ts.
+ */
 export const mq: MediaQueries = {
     ...build(is),
     gt: build(gt),

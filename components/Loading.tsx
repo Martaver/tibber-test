@@ -1,7 +1,8 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { shuffle } from 'lodash';
 import { LoadingDots } from './LoadingDots';
+import { LoadingDot } from './LoadingDot';
 
 type LoadingProps = {
     isLoading: boolean;
@@ -17,11 +18,7 @@ export const Loading: React.FC<LoadingProps> = ({ isLoading }) => {
 
     return (<AnimatePresence>
         {isLoading && (<LoadingDots initial={{ opacity: 1 }} exit={{ position: 'fixed', opacity: 0, bottom: 0 }}>
-            {keys.map(i => (<motion.li key={i} layoutTransition={{
-                type: "spring",
-                damping: 30,
-                stiffness: 200
-            }} />))}
+            {keys.map(key => (<LoadingDot {...{ key }} />))}
         </LoadingDots>)}
     </AnimatePresence>);
 };

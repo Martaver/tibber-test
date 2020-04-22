@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 
 /**
- * Meta data component
+ * Meta data component, allowing us to customise <head>.
  */
 const Meta = () => {
 
