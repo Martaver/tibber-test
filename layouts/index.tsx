@@ -15,6 +15,8 @@ const MainGrid = styled.main`
   justify-content: center;
   flex-direction: column;
 
+  padding: 2em;
+
   height: 100vh;
   overflow: hidden;
 

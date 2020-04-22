@@ -16,6 +16,7 @@
     "apollo-link-http": "^1.5.17",
     "axios": "^0.19.2",
     "chroma-js": "^2.1.0",
+    "framer-motion": "^1.10.3",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
     "graphql-tools": "^4.0.7",
