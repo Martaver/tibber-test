@@ -8,10 +8,9 @@
   ],
   "routes": [
     {
-      "src": "/blog/?",
-      "status": 302,
+      "src": "/api/get-weather",
       "headers": {
-        "Location": "/"
+        "cache-control": "s-maxage=3600"
       }
     }
   ]
