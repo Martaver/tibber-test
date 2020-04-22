@@ -1,24 +1,34 @@
 import React from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { shuffle } from 'lodash';
-import { LoadingDots } from './LoadingDots';
-import { LoadingDot } from './LoadingDot';
+
+import {AnimatePresence} from 'framer-motion';
+import {shuffle} from 'lodash';
+
+import {LoadingDot} from './LoadingDot';
+import {LoadingDots} from './LoadingDots';
 
 type LoadingProps = {
-    isLoading: boolean;
+  isLoading: boolean;
 };
 
-export const Loading: React.FC<LoadingProps> = ({ isLoading }) => {
+export const Loading: React.FC<LoadingProps> = ({isLoading}) => {
+  const [keys, setKeys] = React.useState([1, 2, 3]);
 
-    const [keys, setKeys] = React.useState([1, 2, 3]);
+  React.useEffect(() => {
+    setTimeout(() => setKeys(shuffle(keys)), 500);
+  }, [keys]);
 
-    React.useEffect(() => {
-        setTimeout(() => setKeys(shuffle(keys)), 500);
-    }, [keys]);
-
-    return (<AnimatePresence>
-        {isLoading && (<LoadingDots initial={{ opacity: 1 }} exit={{ position: 'fixed', opacity: 0, bottom: 0 }}>
-            {keys.map(key => (<LoadingDot {...{ key }} />))}
-        </LoadingDots>)}
-    </AnimatePresence>);
+  return (
+    <AnimatePresence>
+      {isLoading && (
+        <LoadingDots
+          exit={{position: 'fixed', opacity: 0, bottom: 0}}
+          initial={{opacity: 1}}
+        >
+          {keys.map(key => (
+            <LoadingDot key={key} />
+          ))}
+        </LoadingDots>
+      )}
+    </AnimatePresence>
+  );
 };

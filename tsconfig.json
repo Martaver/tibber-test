@@ -1,4 +1,5 @@
 {
+  "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -18,13 +19,9 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "exclude": [
-    "**/node_modules"
-  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "scripts/getSchema.ts"
+    "**/*.tsx"
   ]
 }

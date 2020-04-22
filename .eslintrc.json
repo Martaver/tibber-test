@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "./node_modules/gts/",
+    "plugin:react/recommended"
+  ],
+  "root": true,
+  "settings": {
+    "react": {
+      // Tells eslint-plugin-react to automatically detect the version of React to use
+      "version": "detect"
+    }
+  },
+  "rules": {
+    // Disable prop-types validation, because we're using typescript.
+    "react/prop-types": "off"
+  }
+}

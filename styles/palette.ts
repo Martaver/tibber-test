@@ -4,7 +4,7 @@ import chroma from 'chroma-js';
  * The base background color from which all other background colors are derived.
  * Obtained from tibber.com.
  */
-export const back = `#23B8CC`;
+export const back = '#23B8CC';
 
 /**
  * The base foreground color from which all other foreground colors are derived.

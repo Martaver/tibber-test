@@ -1,5 +1,5 @@
-declare module "*.png";
-declare module "*.svg";
-declare module "*.woff";
-declare module "*.ttf";
-declare module "*.eot";
+declare module '*.png';
+declare module '*.svg';
+declare module '*.woff';
+declare module '*.ttf';
+declare module '*.eot';

@@ -19,6 +19,11 @@
  - Apollo GraphQL Client
  - @graphql-codegen
 
+### Dev:
+ - Google GTS (eslint + prettier configuration)
+ - Sortier
+ - Husky & lint-staged for pre-commit auto-fixing staged files
+
 ## Conventions
  - Keep styled components close to their consuming components. They are usually in the same file.
  - Avoid default exports where possible - they make refactoring/renaming more difficult.

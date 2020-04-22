@@ -1,0 +1,12 @@
+/build
+.next
+.next/
+/out
+.now
+.now/
+.next
+.next/
+
+**/node_modules
+
+**/__generated__
