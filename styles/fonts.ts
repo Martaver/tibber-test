@@ -1,5 +1,10 @@
 import { css } from "styled-components";
 
+
+/**
+ * Obtained from Google Fonts.
+ * See: https://fonts.google.com/?query=lato
+ */
 export const fonts = css`
 /* latin-ext */
 @font-face {

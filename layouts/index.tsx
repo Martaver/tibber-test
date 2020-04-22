@@ -4,8 +4,7 @@ import Meta from "../components/Meta";
 import { Normalize } from 'styled-normalize';
 import { GlobalStyle } from '../components/GlobalStyle';
 import styled from 'styled-components';
-import { mq } from '../styles/media';
-import { blue } from '../styles/palette';
+import { back } from '../styles/palette';
 import chroma from 'chroma-js';
 
 const MainGrid = styled.main`
@@ -20,8 +19,8 @@ const MainGrid = styled.main`
   height: 100vh;
   overflow: hidden;
 
-  background: ${blue};
-  background: linear-gradient(170deg, ${chroma(blue).darken(2).hex()} 0%, ${chroma(blue).desaturate(0.5).hex()} 100%);
+  background: ${back};
+  background: linear-gradient(170deg, ${chroma(back).darken(2).hex()} 0%, ${chroma(back).desaturate(0.5).hex()} 100%);
 `;
 
 /**
