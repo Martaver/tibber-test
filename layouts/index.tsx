@@ -13,16 +13,13 @@ const MainGrid = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  ${mq.lt.md`
-    
-  `}
+  flex-direction: column;
 
   height: 100vh;
   overflow: hidden;
 
   background: ${blue};
-  background: linear-gradient(180deg, ${chroma(blue).darken(2).hex()} 0%, ${chroma(blue).desaturate(0.5).hex()} 100%);
+  background: linear-gradient(170deg, ${chroma(blue).darken(2).hex()} 0%, ${chroma(blue).desaturate(0.5).hex()} 100%);
 `;
 
 /**
