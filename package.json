@@ -15,7 +15,7 @@
     "apollo-link": "^1.2.13",
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chroma-js": "^2.1.0",
     "eslint-plugin-react": "^7.19.0",
     "framer-motion": "^1.10.3",
